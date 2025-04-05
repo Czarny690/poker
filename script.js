@@ -49,6 +49,7 @@ const liczbaGraczyInput = document.getElementById("liczbaGraczy");
 const liczbaGraczyWartosc = document.getElementById("liczbaGraczyWartosc");
 let aleGowno=false;
     let nazwy = []
+console.log('to dziala wgl?')
      if(localStorage.getItem('liczbaGraczy') != 1 || localStorage.getItem('liczbaGraczy') != 2 || localStorage.getItem('liczbaGraczy') != 3 || localStorage.getItem('liczbaGraczy') != 4) {
         localStorage.setItem('liczbaGraczy', 4)
     }
