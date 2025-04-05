@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="poczatek">
+
+        <div id="kontroler">
+            <label for="liczbaGraczy">Liczba graczy: <span id="liczbaGraczyWartosc">4</span></label>
+            <input type="range" id="liczbaGraczy" min="1" max="4" value="4">
+        </div>
+    
+        <div id="poczatek-karty">
+            <div class="karta-gracza" id="g2">
+                <p>Jakub</p>
+                <div class="suwaki">
+                    <label>Ryzykowność</label>
+                    <input type="range" min="1" max="9" id="ryzyko">
+                    <label>Ostrożność</label>
+                    <input type="range" min="1" max="9" id="ostroznosc">
+                </div>
+            </div>
+    
+            <div class="karta-gracza"id="g3">
+                <p>Wiktoria</p>
+                <div class="suwaki">
+                    <label>Ryzykowność</label>
+                    <input type="range" min="1" max="9" id="ryzyko">
+                    <label>Ostrożność</label>
+                    <input type="range" min="1" max="9" id="ostroznosc">
+                </div>
+            </div>
+    
+            <div class="karta-gracza" id="g4">
+                <p>Karina</p>
+                <div class="suwaki">
+                    <label>Ryzykowność</label>
+                    <input type="range" min="1" max="9" id="ryzyko">
+                    <label>Ostrożność</label>
+                    <input type="range" min="1" max="9" id="ostroznosc">
+                </div>
+            </div>
+    
+            <div class="karta-gracza" id="g5">
+                <p>Mikołaj</p>
+                <div class="suwaki">
+                    <label>Ryzykowność</label>
+                    <input type="range" min="1" max="9" id="ryzyko">
+                    <label>Ostrożność</label>
+                    <input type="range" min="1" max="9" id="ostroznosc">
+                </div>
+            </div>
+        </div>
+        <button id="rozpocznij" onclick="wybranieGraczy()">Rozpocznij grę</button>
+    <div id="wynik"></div>
+    </div>
+    
+    <div id="WspolnaPula"><p id="Wsp">0</p></div>
+    <div class="Wspolne">
+        <div id="w1" class="karta">
+            <div id="tylna"></div>
+            <p class="symbol top-left"></p>
+            <p class="kolor top-left"></p>
+            <div class="srodek"></div>
+            <p class="kolor bottom-right"></p>
+            <p class="symbol bottom-right"></p>
+        </div>
+
+        <div id="w2" class="karta">
+            <div id="tylna"></div>
+            <p class="symbol top-left"></p>
+            <p class="kolor top-left"></p>
+            <div class="srodek"></div>
+            <p class="kolor bottom-right"></p>
+            <p class="symbol bottom-right"></p>
+        </div>
+
+        <div id="w3" class="karta">
+            <div id="tylna"></div>
+            <p class="symbol top-left"></p>
+            <p class="kolor top-left"></p>
+            <div class="srodek"></div>
+            <p class="kolor bottom-right"></p>
+            <p class="symbol bottom-right"></p>
+        </div>
+
+        <div id="w4" class="karta">
+            <div id="tylna"></div>
+            <p class="symbol top-left"></p>
+            <p class="kolor top-left"></p>
+            <div class="srodek"></div>
+            <p class="kolor bottom-right"></p>
+            <p class="symbol bottom-right"></p>
+        </div>
+
+        <div id="w5" class="karta">
+            <div id="tylna"></div>
+            <p class="symbol top-left"></p>
+            <p class="kolor top-left"></p>
+            <div class="srodek"></div>
+            <p class="kolor bottom-right"></p>
+            <p class="symbol bottom-right"></p>
+        </div>
+    </div>
+    <div id="TwojeKarty">
+        <div id="Pierwsza" class="karta">
+            <p class="symbol top-left"></p>
+            <p class="kolor top-left"></p>
+            <div class="srodek"></div>
+            <p class="kolor bottom-right"></p>
+            <p class="symbol bottom-right"></p>
+        </div>
+        <div id="Druga" class="karta">
+            <p class="symbol top-left"></p>
+            <p class="kolor top-left"></p>
+            <div class="srodek"></div>
+            <p class="kolor bottom-right"></p>
+            <p class="symbol bottom-right"></p>
+        </div>
+    </div>
+    <div id="Informacje">
+        <div id="CzasBlok">
+            <div id="KolkoCzas"></div>
+            <div id="CzasTlo"></div>
+            <div id="Czas"></div>
+        </div>
+        <div id="TwojaReka"></div>
+        <div id="Pieniadze"></div>
+        <div id="Kolor"></div>
+        <div id="Poddaj" onclick="Poddaj( 0,'gracz')">Poddaj</div>
+        <div id="Check" onclick="Sprawdz('gracz')">Sprawdź</div>
+        <div id="Dobij"></div>
+        <div id="Podbij" onclick="Podbij(0, 'gracz')">Podbij</div>
+        <div id="podbijanieBlok">
+        <input type="range" id="Podbijanie" step="20"></input>
+        <p id="IleDoObstawienia"></p>
+        </div>  
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
