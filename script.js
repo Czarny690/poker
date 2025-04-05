@@ -49,6 +49,10 @@ const liczbaGraczyInput = document.getElementById("liczbaGraczy");
 const liczbaGraczyWartosc = document.getElementById("liczbaGraczyWartosc");
 let aleGowno=false;
     let nazwy = []
+  if(localStorage.getItem('liczbaGraczy') == null) {
+        localStorage.setItem('liczbaGraczy', 4)
+        localStorage.setItem('CzyOdswiezono', 0)
+    }
     document.addEventListener("DOMContentLoaded", () => {
         for (let i = 2; i <= 5; i++) {
             let ryzInp = document.querySelector(`#g${i} #ryzyko`);
