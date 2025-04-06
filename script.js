@@ -48,14 +48,16 @@ let kolejnoscGry = []
 const liczbaGraczyInput = document.getElementById("liczbaGraczy");
 const liczbaGraczyWartosc = document.getElementById("liczbaGraczyWartosc");
 let aleGowno=false;
-    let nazwy = []
-console.log('to dziala wgl?')
+let NazwaUzytkownika = document.getElementById('NazUzy')
+let nazwy = []
+
     if(localStorage.getItem('liczbaGraczy') != 1 && localStorage.getItem('liczbaGraczy') != 2 && localStorage.getItem('liczbaGraczy') != 3 && localStorage.getItem('liczbaGraczy') != 4) {
         localStorage.setItem('liczbaGraczy', 4)
     }
     if(localStorage.getItem('CzyOdswiezono') != 0 && localStorage.getItem('CzyOdswiezono') != 0 ) {
         localStorage.setItem('CzyOdswiezono', 0)
     }
+
     document.addEventListener("DOMContentLoaded", () => {
         for (let i = 2; i <= 5; i++) {
             let ryzInp = document.querySelector(`#g${i} #ryzyko`);
@@ -90,6 +92,8 @@ console.log('to dziala wgl?')
     }
     
     function wybranieGraczy() {
+        localStorage.setItem('NazwaUzytkownika', NazwaUzytkownika.value)
+        gracz.nazwa = localStorage.getItem('NazwaUzytkownika')
         localStorage.setItem('liczbaGraczy', liczbaGraczy);
         
         for (let i = 0; i < liczbaGraczy; i++) {
@@ -263,7 +267,12 @@ if(localStorage.getItem('CzyOdswiezono')==null || localStorage.getItem('CzyOdswi
             )
         }
     }
-    
+    gracz = new Gracz('', 'purple', 1, 0, 0) 
+    if(localStorage.getItem('NazwaUzytkownika') != null) {
+        NazUzy.value = localStorage.getItem('NazwaUzytkownika')
+    } else {
+    NazUzy.value = 'Gracz 1'
+    }
     function pokazKarte(karta, kartaElement) {
         let symbole = kartaElement.querySelectorAll('.symbol');
         let kolory = kartaElement.querySelectorAll('.kolor');
@@ -285,7 +294,7 @@ if(localStorage.getItem('CzyOdswiezono')==null || localStorage.getItem('CzyOdswi
         kolory[1].innerText = karta.kolor;
     }
 
-    gracz = new Gracz('Artur', 'purple', 1, 0, 0)
+
 
     
         
