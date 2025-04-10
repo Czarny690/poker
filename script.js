@@ -54,7 +54,7 @@ let nazwy = []
     if(localStorage.getItem('liczbaGraczy') != 1 && localStorage.getItem('liczbaGraczy') != 2 && localStorage.getItem('liczbaGraczy') != 3 && localStorage.getItem('liczbaGraczy') != 4) {
         localStorage.setItem('liczbaGraczy', 4)
     }
-    if(localStorage.getItem('CzyOdswiezono') != 0 && localStorage.getItem('CzyOdswiezono') != 0 ) {
+    if(localStorage.getItem('CzyOdswiezono') != 0 && localStorage.getItem('CzyOdswiezono') != 1 ) {
         localStorage.setItem('CzyOdswiezono', 0)
     }
 
@@ -636,7 +636,7 @@ function zagrajJakoBot() {
                 if (nazwy[k] !== 'gracz') {
                     zagrajJakoBot();
                 }
-            },losowyCzas);
+            },1);
         }
     }
 }
