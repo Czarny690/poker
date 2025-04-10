@@ -636,7 +636,7 @@ function zagrajJakoBot() {
                 if (nazwy[k] !== 'gracz') {
                     zagrajJakoBot();
                 }
-            },1);
+            },losowyCzas);
         }
     }
 }
